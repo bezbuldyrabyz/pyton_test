@@ -1,4 +1,11 @@
-print("hello")
-print("Yo")
-print("Sm"*8)asdadasdasdasda
-sadkasd
+# Первый сценарий на языке Python
+
+import sys
+print(sys.platform)
+print(2**100)
+x="Spam!"
+print(x*8)
+
+#-- for example
+for  x in "spam":
+    print(x)
