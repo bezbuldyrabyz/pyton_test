@@ -190,3 +190,41 @@ print(t+(5,6))
 print(t.index(4))
 print(t.count(4))
 print(t[2])
+
+
+# другие базовые типы
+
+x=set("spam")
+y={"h","a","m"}
+print(x,y)
+print(x&y) # Пересечение
+print(x|y) # Объединение
+print(x-y) # Разность
+print({x**2 for x in [1,2,3,4]})
+
+print(1/3) # Вещественное число
+print((2/3)+(1/2))
+
+import decimal # Вещественные числа с фиксированной точностью
+d=decimal.Decimal("3.141")
+print(d+1)
+decimal.getcontext().prec=2
+print(decimal.Decimal("1.00")/decimal.Decimal("3.00"))
+from fractions import Fraction
+f=Fraction(2,3)
+print(f+1)
+print(f+Fraction(1,2))
+print(1>2,1<2)
+print(bool("spam"))
+x=None # Специальный объект None
+print(x)
+l=[None]*100
+print(l)
+print(type(l))
+print(type(type(l)))
+
+if type(l)==type([]):
+    print ('yes')
+
+if(isinstance(l,list)):
+    print("yes")
