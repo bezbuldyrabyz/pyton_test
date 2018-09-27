@@ -160,3 +160,33 @@ x=4
 while x>0:
     print("spam!"*x)
     x-=1
+
+
+# итерационная оптимизация
+
+squares=[x**2 for x in [1,2,3,4,5]]
+print(squares)
+
+squares=[]
+for x in [1,2,3,4,5]:
+    squares.append(x**2)
+print(squares)
+
+if not "f" in d:
+    print('missing')
+
+value=d.get("x", 0)
+print(value)
+print(d)
+value=d["x"] if "x" in d else 0
+print(value)
+
+
+# кортежи
+
+t=(1,2,3,4)
+print(len(t))
+print(t+(5,6))
+print(t.index(4))
+print(t.count(4))
+print(t[2])
