@@ -228,3 +228,59 @@ if type(l)==type([]):
 
 if(isinstance(l,list)):
     print("yes")
+
+# типы данных
+print("100: ", hex(100), ", ", oct(100), ", ", bin(100))
+
+
+# числовые операции
+
+print(int(3.1415)) # Усекает дробную часть вещественного числа
+print(float(3)) # Преобразует целое число в вещественное
+
+num=1/3
+
+print(repr(num)) # Используется для автоматического вывода: в форме как есть
+print(str(num)) # Используется функцией print: дружественная форма
+print(4//3) # деление с округлением вниз
+
+print(math.floor(2.5))
+print(math.floor(-2.5))
+print(math.trunc(2.5))
+print(math.trunc(-2.5))
+
+print(5//2, 5//-2)
+print(5//2.0, 5//-2.0)
+print(99999999999999999999999999999999999999999999999999999999999999999+1)
+print(2**200)
+print(eval("64"),eval("0o100"))
+print("{0:o}, {1:x}, {2:b}".format(64,64,64))
+print("%o, %x, %X" % (64,255,255))
+
+x=1
+print(x<<2) # Сдвиг влево на 2 бита: 0100
+print(x|2) # Побитовое ИЛИ: 0011
+print(x&1) # Побитовое И: 0001
+print(round(2.567,2))
+print("%.2f" % (1/3))
+print(random.random())
+print(random.randint(1,10))
+print(random.choice(["Life of Brian","Holy Grail","Meaning of Life"]))
+
+print(decimal.Decimal("0.1")+decimal.Decimal("0.1")+decimal.Decimal("0.1")-decimal.Decimal("0.3"))
+print(decimal.Decimal("0.1")+decimal.Decimal("0.10")+decimal.Decimal("0.10")-decimal.Decimal("0.3"))
+decimal.getcontext().prec=4
+print(decimal.Decimal(1)/decimal.Decimal(7))
+decimal.getcontext().prec=2
+pay=decimal.Decimal(str(1999+1.33))
+print(pay)
+print(decimal.Decimal("1.00")/decimal.Decimal("3.00"))
+with decimal.localcontext() as ctx:
+    ctx.prec=4
+    print(decimal.Decimal("1.00")/decimal.Decimal("3.00"))
+
+x=Fraction(1,3)
+y=Fraction(4,6)
+print(x)
+print(Fraction(".25"))
+print(Fraction(".25")+Fraction("1.25"))
