@@ -357,3 +357,12 @@ s.add((1,2,3)) # Добавляться могут только неизменя
 print(s)
 print(s|{(4,5,6),(1,2,3)})
 print((1,2,3) in s)
+
+# Генераторы множеств в Python 3.0
+
+print({x**2 for x in [1,2,3,4,]})
+print({x for x in "spam"})
+l=[1,2,1,3,2,4,5,]
+print(set(l))
+l=list(set(l))
+print(l)
