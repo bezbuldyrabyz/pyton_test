@@ -284,3 +284,28 @@ y=Fraction(4,6)
 print(x)
 print(Fraction(".25"))
 print(Fraction(".25")+Fraction("1.25"))
+
+# Преобразование и смешивание в выражениях значений разных типов. page 182
+
+print((2.5).as_integer_ratio())
+f=2.5
+z=Fraction(*f.as_integer_ratio())
+print(z)
+print(x+z)
+print(float(x))
+print(float(z))
+print(float(x+z))
+print(Fraction.from_float(1.75))
+print(Fraction(*(1.75).as_integer_ratio()))
+
+print(x+2) # Fraction + int -> Fraction
+print(x+2.0) # Fraction + float -> float
+print(x+(1./3)) # Fraction + float -> float
+print(x+Fraction(4,3)) # Fraction + Fraction -> Fraction
+
+print(4.0/3)
+print((4.0/3).as_integer_ratio()) # Произойдет потеря точности
+a=x+Fraction(*(4.0/3).as_integer_ratio())
+print(a)
+print(22517998136852479 / 13510798882111488)
+print(a.limit_denominator(10))
