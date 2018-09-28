@@ -307,5 +307,53 @@ print(4.0/3)
 print((4.0/3).as_integer_ratio()) # Произойдет потеря точности
 a=x+Fraction(*(4.0/3).as_integer_ratio())
 print(a)
-print(22517998136852479 / 13510798882111488)
-print(a.limit_denominator(10))
+print(22517998136852479 / 13510798882111488) # 5 / 3 (или близкое к нему!)
+print(a.limit_denominator(10)) # Упростить до ближайшего рационального
+
+
+# множества
+
+x=set("abcde")
+y=set("bdxyz")
+print(x)
+print(set(["a","c","b","e","d"]))
+print("e" in x) # Проверка вхождения в множество
+print("raznost mnozhestv x-y=", x-y)
+print("raznost mnozhestv y-x=",y-x)
+print("ob'edinenie mnozhestv x|y=", x|y)
+print("peresechenie mnozhestv x&y=", x&y)
+print("simetricheskay raznost' x^y=", x^y)
+z=x.intersection(y) # То же, что и выражение x & y
+z.add("SPAM")
+print(z)
+z.update(set(["X", "Y"])) # Объединение множеств
+print(z)
+z.remove("b") # Удалит один элемент
+print(z)
+
+for i in set("abc"):
+    print(i*3)
+
+s=set([1,2,3])
+s.union([3,4])
+print(s.union([3,4]))
+print(s.issubset(range(-5,5)))
+s={"s","p","a","m"}
+s.add("alot")
+print(s)
+
+s1={1,2,3,4}
+print(s1>{1,3}) # Надмножество
+print(s1-{1,2,3,4}) # Пустое множество выводится иначе
+print(type({})) # Литерал {} обозначает пустой словарь
+
+s=set() # Инициализация пустого множества
+s.add(1.23)
+print(s)
+
+# Ограничения, связанные с неизменяемостью и фиксированные множества
+
+s.add((1,2,3)) # Добавляться могут только неизменяемые объекты
+print(s)
+print(s|{(4,5,6),(1,2,3)})
+print((1,2,3) in s)
