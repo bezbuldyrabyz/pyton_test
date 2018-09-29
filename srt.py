@@ -51,3 +51,23 @@ s=s[:4]+"Burger"+s[-1]
 print(s)
 s="splot"
 print(s.replace("pl","pamal"))
+
+
+# cтроковые методы
+s="help"
+print(s.capitalize())
+print(s.isalpha())
+s="xxxxSPAMxxxxSPAMxxxx"
+where =s.find("SPAM") # Подстрока найдена со смещением 4
+print(where)
+s=s[:where]+"EGGS"+s[(where+4):]
+print(s)
+s="spammy"
+l=list(s)
+print(l)
+l[3]="x"
+l[4]="x"
+print(l)
+s="".join(l)
+print(s)
+print("SPAM".join(["eggs","sausage","ham","toast"]))
