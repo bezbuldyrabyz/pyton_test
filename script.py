@@ -366,3 +366,6 @@ l=[1,2,1,3,2,4,5,]
 print(set(l))
 l=list(set(l))
 print(l)
+
+engineers={"bob","sue","ann","vic"}
+managers={"tom","sue"}

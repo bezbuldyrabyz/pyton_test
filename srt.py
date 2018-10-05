@@ -99,10 +99,46 @@ print(my_string.encode())
 print(my_string.encode('ascii', errors='ignore')) # b' cat'
 my_string.encode('ascii', errors='replace') # b'??? cat'
 print(my_string.encode('ascii', errors='xmlcharrefreplace')) # b'&#1082;&#1086;&#1090; cat'
+print(my_string.encode('ascii', errors="backslashreplace")) # b'\\u043a\\u043e\\u0442 cat'
+print(my_string.encode("ascii", errors="namereplace")) # b'\\N{CYRILLIC SMALL LETTER KA}\\N{CYRILLIC SMALL LETTER O}\\N{CYRILLIC SMALL LETTER TE} cat'
+surrogated = '\udcd0\udcba\udcd0\udcbe\udcd1\udc82 cat'
+print(surrogated.encode(errors="surrogateescape")) # b'\xd0\xba\xd0\xbe\xd1\x82 cat'
+print(surrogated.encode(errors="surrogatepass")) # b'\xed\xb3\x90\xed\xb2\xba\xed\xb3\x90\xed\xb2\xbe\xed\xb3\x91\xed\xb2\x82 cat'
 
+#print(line.endswith("Ni!\n")) #Возвращает флаг, указывающий на то, заканчивается ли строка указанным постфиксом.
+#my_str = 'Discworld'
+#print(my_str.endwith("jockey")) # False
+
+my_str = '\t1\t10\t100\t1000\t10000'
+my_str.expandtabs() # Возвращает копию строки, в которой символы табуляций заменены пробелами.
+my_str.expandtabs(4) # tabsize=8 : Максимальное количество пробелов на которое может быть заменена табуляция.
+
+my_str = 'barbarian'
+my_str.find("bar") # Возвращает наименьший индекс, по которому обнаруживается начало указанной подстроки в исходной.
+my_str.find("bar", 1) # start=0 : Индекс начала среза в исходной строке, в котором требуется отыскать подстроку.
+my_str.find('bar', 1, 2)  # -1, end=None : Индекс конца среза в исходной строке, в котором требуется отыскать подстроку.
+
+print('{}-{}-{}'.format(1, 2, 3))  # '1-2-3'
+'{}-{}-{}'.format(*[1, 2, 3])  # '1-2-3'
+print("{one}-{two}-{three}".format(two=2,one=1,three=3))
+print("{one}-{two}-{three}".format(**{"two":2,"one":1,"three":3}))  # '1-2-3'
+
+class my_dict(dict):
+    missing_default="space"
+    def __missing__(self,key):
+        return self.missing_default
+
+my_str = 'kosmonavt fly to {where}'
+print(my_str.format_map(my_dict()))
+print(my_str.format_map(my_dict(where="tatarstan")))
+
+my_str = 'barbarian'
+my_str.index('bar')  # 0 Возвращает наименьший индекс, по которому обнаруживается начало указанной подстроки в исходной.
+
+print("!@#".isalnum()) # Возвращает флаг, указывающий на то, содержит ли строка только цифры и/или буквы.
+'abc123'.isalpha()  # False. Возвращает флаг, указывающий на то, содержит ли строка только буквы.
+'1000'.isdecimal()  # True. Возвращает флаг, указывающий на то, содержит ли строка число в десятичной системе исчисления.
 
 print(line)
 print(line.rstrip()) # удаляют пробельные символы в конце текстовой строки
 print(line.upper())
-print(line.isalpha()) # Вернёт True, если в строке хотя бы один символ и все символы строки являются буквами, иначе — False.
-print(line.endswith("Ni!\n")) #Возвращает флаг, указывающий на то, заканчивается ли строка указанным постфиксом.
