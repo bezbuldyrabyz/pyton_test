@@ -46,3 +46,52 @@ for c in "SPAM":
 print(res)
 
 print(list(map(abs,[-1,-2,0,1,2]))) # Функция map применяется к последовательности
+
+l=["spam","Spam","SPAM!"]
+l[1]="eggs"
+l[0:2]=["eat","more"]
+print(l)
+
+# Методы списков
+
+l.append("please")
+l.sort()
+
+l = ["abc", "ABD", "aBe"]
+l.sort() # [‘ABD’, ‘aBe’, ‘abc’]
+l.sort(key=str.lower) # [‘abc’, ‘ABD’, ‘aBe’]
+l.sort(key=str.lower, reverse=True) # [‘aBe’, ‘ABD’, ‘abc’]
+print(sorted([x.lower() for x in l], reverse=True))
+l=[1,2]
+l.extend([3,4,5]) # Добавление нескольких элементов в конец списка
+print(l)
+print(l.pop()) # Удаляет и возвращает последний элемент списка
+print(l)
+l.reverse()
+print(l)
+print(list(reversed(l)))
+
+# стек
+
+l=[]
+l.append(1)
+l.append(2)
+print(l)
+print(l.pop())
+print(l)
+
+l=["spam","eggs","ham"]
+print(l.index("eggs"))
+l.insert(1,"toast")
+print(l)
+l.remove("eggs")
+print(l)
+l.pop(1) # Удаление элемента в указанной позиции
+print(l)
+
+l=["SPAM!", "eat", "more", "please"]
+print(l)
+del l[0]
+print(l)
+del l[1:]
+print(l)
