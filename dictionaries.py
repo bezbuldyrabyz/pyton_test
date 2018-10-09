@@ -52,3 +52,55 @@ print(l)
 # Таблица языков
 
 table={"Python":"Guido van Rossum","Perl":"Lary Wall","Tcl":"John Ousterhout"}
+
+language="Python"
+creator=table[language]
+print(creator)
+for i in table:
+    print(i,"\t",table[i])
+
+# Использование словарей для имитации гибких списков
+
+l=[]
+# l[99]="spam" # error
+d={}
+d[99]="spam" # При использовании целочисленных ключей словари могут имитировать списки, которые увеличиваются при выполнении операции присваивания по смещению:
+print(d[99])
+print(d)
+
+# Использование словарей для структур разреженных данных
+
+matrix={}
+matrix[(2,3,4)]=88
+matrix[(7,8,9)]=99
+x=2; y=3; z=4 # символ ; отделяет инструкции
+print(matrix[(x,y,z)])
+print(matrix)
+
+# Как избежать появления ошибок обращения к несуществующему ключу
+
+if(2,3,6) in matrix:
+    print(matrix[(2,3,6)])
+else:
+    print(0)
+
+try:
+    print(matrix[(2,3,6)])
+except KeyError:
+    print(0)
+
+print(matrix.get((2,3,4),0)) # Существует; извлекается и возвращается
+print(matrix.get((2,3,6),0)) # Отсутствует; используется аргумент default
+
+# Использование словарей в качестве «записей»
+
+rec={}
+rec["name"]="mel"
+rec["age"]=45
+rec["job"]="trainer/write"
+mel={"name":"Mark",
+    "jobs":["trainer","writer"],
+    "web":"www.rmi.net/lutz",
+    "home":{"state":"CO","zip":80513}}
+mel["name"]
+print(mel["jobs"][1])
