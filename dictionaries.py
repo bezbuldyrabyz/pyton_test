@@ -142,3 +142,10 @@ print(d.items()|d)
 print(d.items()|d)
 print(d.items()|{("c",3),("d",4)})
 print(dict(d.items()|{("c",3),("d",4)}))
+
+d={"a":1,"b":2,"c":3}
+print("c" in d)
+if "c" in d: print("present",d["c"])
+print(d.get("c"))
+print(d.get("x"))
+if d.get("c") != None: print("present", d["c"])
