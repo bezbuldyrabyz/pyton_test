@@ -124,3 +124,21 @@ print(d)
 del d["b"]
 print(d)
 print(list(d))
+
+
+# Представления словарей и множества
+
+print(k | {"x":4}) # Представления ключей (и иногда элементов)
+
+d={"a":1,"b":2,"c":3}
+print(d.keys() & {"b"})
+print(d.keys() & {"b":1})
+print(d.keys() | {"b","c","d"})
+
+d={"a":1}
+print(list(d.items()))
+print(d.items()|d.keys())
+print(d.items()|d)
+print(d.items()|d)
+print(d.items()|{("c",3),("d",4)})
+print(dict(d.items()|{("c",3),("d",4)}))
