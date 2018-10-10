@@ -104,3 +104,23 @@ mel={"name":"Mark",
     "home":{"state":"CO","zip":80513}}
 mel["name"]
 print(mel["jobs"][1])
+
+
+# Представления словарей
+
+d = dict(a=1, b=2, c=3)
+k=d.keys()
+print(k)
+v=d.values()
+print(v)
+print(list(v))
+print(list(d.items()))
+
+for i in d.keys(): print(i)
+for i in d:print(i) # В итерациях по-прежнему не обязательно вызывать метод keys()
+
+d={"a":1,"b":2,"c":3}
+print(d)
+del d["b"]
+print(d)
+print(list(d))
